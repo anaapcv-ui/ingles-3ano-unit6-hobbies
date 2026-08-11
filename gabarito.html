@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gabarito comentado · Fun Park · Inglês 3º ano · Unit 6</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--pink:#ff3d81;--yellow:#ffd020;--orange:#ff922b;--red:#f03e3e;--blue:#1c7ed6;--purple:#9c36b5;--green:#2f9e44;--green2:#51cf66;--ink:#2a1a3a}
+  *{box-sizing:border-box}
+  body{margin:0;background:linear-gradient(180deg,#e7f5ff,#fff0f6 60%,#fff9db);font-family:'Nunito',system-ui,sans-serif;color:var(--ink);line-height:1.6;padding-bottom:90px}
+  h1,h2,h3,.baloo{font-family:'Baloo 2','Nunito',sans-serif}
+  header{background:linear-gradient(120deg,#1c7ed6,#2f9e44);color:#fff;padding:18px 16px;border-bottom:6px solid var(--yellow);box-shadow:0 6px 0 #143f78}
+  .wrap{max-width:820px;margin:0 auto;padding:0 16px}
+  .titlerow{display:flex;align-items:center;gap:14px}.mascot{font-size:2.8rem}
+  h1{margin:0;font-size:1.45rem;text-shadow:0 2px 0 rgba(0,0,0,.18)}.sub{font-size:.92rem;opacity:.96}
+  .sec{background:#fff;border-radius:20px;border:4px solid #d0ebff;box-shadow:0 6px 0 rgba(28,126,214,.12);padding:18px 20px;margin:20px 0}
+  .quick{display:flex;flex-wrap:wrap;gap:8px}
+  .quick .qb{background:#f1f3f5;border:2px solid #ced4da;border-radius:10px;padding:6px 10px;font-weight:800;min-width:64px;text-align:center}
+  .quick .qb b{color:var(--green)}
+  .item{border-left:6px solid var(--green2);background:#fbfff9;border-radius:8px;padding:12px 14px;margin:12px 0}
+  .item .qn{font-weight:800;color:var(--blue)}
+  .item .qq{font-weight:700;margin:4px 0}
+  .item .cor{color:var(--green);font-weight:800}
+  .item .exp{margin-top:6px}
+  .item .wrong{color:#868e96;font-size:.94rem;margin-top:4px}
+  .spk{background:var(--yellow);border:2px solid var(--orange);border-radius:50%;width:30px;height:30px;font-size:.9rem;cursor:pointer;box-shadow:0 2px 0 #b5651d;vertical-align:middle}
+  .spk:active{transform:translateY(2px);box-shadow:none}
+  .dica{background:#fff3bf;border-radius:8px;padding:8px 12px;margin-top:8px;font-weight:700;box-shadow:2px 3px 0 rgba(0,0,0,.06)}
+  .savebar{position:fixed;bottom:0;left:0;right:0;background:#fff0f6ee;border-top:3px solid var(--pink);padding:8px 14px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;backdrop-filter:blur(4px)}
+  a.nav{background:var(--pink);color:#fff;border:none;border-radius:12px;padding:9px 16px;font-family:'Baloo 2';text-decoration:none;box-shadow:0 3px 0 #b5197a;cursor:pointer;font-size:1rem}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="titlerow"><div class="mascot">✅</div><div>
+    <h1>Gabarito comentado — Fun Park</h1>
+    <div class="sub">Inglês · 3º ano · Unit 6 · resposta certa em verde + explicação de cada uma</div>
+  </div></div>
+</div></header>
+
+<div class="wrap">
+  <div class="sec">
+    <h2 style="color:var(--blue);margin-top:0">📋 Respostas rápidas</h2>
+    <div class="quick" id="quick"></div>
+  </div>
+  <div class="sec">
+    <h2 style="color:var(--blue);margin-top:0">🔎 Questão por questão</h2>
+    <div id="items"></div>
+  </div>
+</div>
+
+<div class="savebar">
+  <a class="nav" href="index.html">⌂ Início</a>
+  <a class="nav" href="simulado.html">📝 Voltar ao Simulado</a>
+  <a class="nav" href="resumo.html">🗺️ Resumo</a>
+</div>
+
+<script>
+function speak(t){try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='en-US';u.rate=1;speechSynthesis.speak(u);}catch(e){}}
+const LET=['A','B','C','D'];
+const G=[
+ {q:'"ouvir música"',o:['listen to music','read books','play soccer','watch TV'],c:0,say:'listen to music',exp:'"listen to music" = ouvir música.',dica:'"read books" = ler livros; "watch TV" = assistir TV.'},
+ {q:'"jogar futebol"',o:['swim','play soccer','draw','dance'],c:1,say:'play soccer',exp:'"play soccer" = jogar futebol.',dica:'"swim" = nadar; "draw" = desenhar; "dance" = dançar.'},
+ {q:'"desenhar"',o:['draw','paint','sing','read'],c:0,say:'draw',exp:'"draw" = desenhar.',dica:'Cuidado: "paint" = pintar (não é desenhar).'},
+ {q:'"assistir TV"',o:['watch TV','make models','do puzzles','climb a tree'],c:0,say:'watch TV',exp:'"watch TV" = assistir TV.',dica:'"make models" = montar maquetes; "do puzzles" = quebra-cabeça.'},
+ {q:'"nadar"',o:['dance','swim','play','paint'],c:1,say:'swim',exp:'"swim" = nadar.',dica:'"dance" = dançar; "play" = brincar/jogar.'},
+ {q:'"fazer quebra-cabeça"',o:['do puzzles','board games','karaoke','make models'],c:0,say:'do puzzles',exp:'"do puzzles" = fazer quebra-cabeça.',dica:'"board games" = jogos de tabuleiro.'},
+ {q:'"cantar karaokê"',o:['sing karaoke','draw','swim','read books'],c:0,say:'sing karaoke',exp:'"sing karaoke" = cantar karaokê.',dica:'"sing" é cantar.'},
+ {q:'"ler livros"',o:['read books','watch TV','paint','dance'],c:0,say:'read books',exp:'"read books" = ler livros.',dica:'Não confunda com "watch TV" = assistir TV.'},
+ {q:'"make models" quer dizer:',o:['pintar','montar maquetes','dançar','nadar'],c:1,say:'make models',exp:'"make models" = montar maquetes.',dica:'"make" = fazer/montar; "models" = maquetes/modelos.'},
+ {q:'"play board games" quer dizer:',o:['jogar videogame','jogar jogos de tabuleiro','jogar futebol','pular corda'],c:1,say:'play board games',exp:'"play board games" = jogar jogos de tabuleiro.',dica:'"video games" = videogame; "soccer" = futebol.'},
+ {q:'"I ___ playing soccer."',o:['likes','like','liking','to like'],c:1,say:'I like playing soccer.',exp:'Com "I" usamos "like" (sem s).',dica:'O "s" só entra com He/She.'},
+ {q:'"She ___ dancing."',o:['like','likes','don\'t','doesn\'t'],c:1,say:'She likes dancing.',exp:'Com "She" o like ganha "s" → likes.',dica:'É o "s" mágico do He/She.'},
+ {q:'"Ele não gosta de assistir TV."',o:['He like watching TV.','He doesn\'t like watching TV.','He likes watching TV.','He don\'t likes TV.'],c:1,say:'He doesn\'t like watching TV.',exp:'"doesn\'t like" = não gosta. Depois de doesn\'t, like fica sem s.',dica:'"don\'t" é para I/you/they; "doesn\'t" é para He/She.'},
+ {q:'Qual está CERTA?',o:['He like soccer.','He likes soccer.','He liking soccer.','He likes soccers.'],c:1,say:'He likes soccer.',exp:'"He likes soccer." — likes com s, soccer sem s.',dica:'"soccer" não fica no plural.'},
+ {q:'"Eu não gosto de fazer quebra-cabeça."',o:['I like doing puzzles.','I don\'t like doing puzzles.','She doesn\'t like puzzles.','I likes puzzles.'],c:1,say:'I don\'t like doing puzzles.',exp:'"I don\'t like" = eu não gosto.',dica:'Com "I" é "don\'t", não "doesn\'t".'},
+ {q:'"___ you like doing?"',o:['What do','What does','Who is','When do'],c:0,say:'What do you like doing?',exp:'A pergunta é "What do you like doing?".',dica:'Com "you" usamos "do", não "does".'},
+ {q:'"She ___ like climbing a tree." (NÃO gosta)',o:['likes','doesn\'t','don\'t','like'],c:1,say:'She doesn\'t like climbing a tree.',exp:'Para dizer que ela não gosta: "doesn\'t like".',dica:'Depois de doesn\'t, o like fica sem s.'},
+ {q:'Som "êi" com "ai":',o:['play','train','today','day'],c:1,say:'train',exp:'"train" tem "ai" no meio.',dica:'play, today e day usam "ay".'},
+ {q:'Som "êi" com "ay":',o:['rain','play','train','rainy'],c:1,say:'play',exp:'"play" termina em "ay".',dica:'rain, train e rainy usam "ai".'},
+ {q:'"It\'s ___ today." (chuvoso)',o:['rainy','play','train','day'],c:0,say:'It\'s rainy today.',exp:'"rainy" = chuvoso.',dica:'"rain" = chuva; "rainy" = chuvoso.'},
+ {q:'"They both ___ playing with friends."',o:['likes','like','doesn\'t','liking'],c:1,say:'They both like playing with friends.',exp:'Com "they" usamos "like" (sem s).',dica:'O "s" é só de He/She.'},
+ {q:'"He likes ___ books." (ler)',o:['reading','read','reads','to reads'],c:0,say:'He likes reading books.',exp:'Depois de likes, a atividade fica com "-ing": reading.',dica:'like/likes + verbo-ing.'},
+ {q:'"Ela gosta de pintar."',o:['She like painting.','She likes painting.','She likes paint.','He likes painting.'],c:1,say:'She likes painting.',exp:'"She likes painting." — likes com s + painting.',dica:'Não esqueça o s em likes e o -ing em painting.'},
+ {q:'Chant: "Let\'s ___ a game!"',o:['play','plays','playing','train'],c:0,say:'Let\'s play a game!',exp:'"Let\'s play a game!" = Vamos jogar um jogo!',dica:'Depois de "Let\'s" o verbo fica na forma simples: play.'},
+ {q:'Combina com "What do you like doing?"',o:['Yes, please.','I like drawing.','He is tall.','She doesn\'t.'],c:1,say:'I like drawing.',exp:'A resposta certa fala de uma atividade: "I like drawing."',dica:'A pergunta pede o que você gosta de fazer.'}
+];
+const q=document.getElementById('quick');
+q.innerHTML=G.map((g,i)=>`<div class="qb">${i+1}) <b>${LET[g.c]}</b></div>`).join('');
+const it=document.getElementById('items');
+it.innerHTML=G.map((g,i)=>{
+  let opts=g.o.map((o,j)=>`<div class="${j===g.c?'cor':'wrong'}">${LET[j]}) ${o} ${j===g.c?'✅':'—'}</div>`).join('');
+  return `<div class="item"><div class="qn">Questão ${i+1}</div><div class="qq">${g.q}</div>${opts}
+    <div class="exp">💡 ${g.exp} <button class="spk" onclick="speak('${g.say.replace(/'/g,"\\'")}')">🔊</button> <i>"${g.say}"</i></div>
+    <div class="dica">📌 Dica: ${g.dica}</div></div>`;
+}).join('');
+</script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulado · Fun Park · Inglês 3º ano · Unit 6</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--pink:#ff3d81;--yellow:#ffd020;--orange:#ff922b;--red:#f03e3e;--blue:#1c7ed6;--sky:#4dabf7;--purple:#9c36b5;--green:#2f9e44;--green2:#51cf66;--ink:#2a1a3a}
+  *{box-sizing:border-box}
+  body{margin:0;background:linear-gradient(180deg,#d3f9d8,#fff0f6 55%,#e7f5ff);font-family:'Nunito',system-ui,sans-serif;color:var(--ink);line-height:1.6;padding-bottom:90px}
+  h1,h2,h3,.baloo{font-family:'Baloo 2','Nunito',sans-serif}
+  header{background:linear-gradient(120deg,#2f9e44,#1c7ed6);color:#fff;padding:18px 16px;border-bottom:6px solid var(--yellow);box-shadow:0 6px 0 #1e6b2e}
+  .wrap{max-width:820px;margin:0 auto;padding:0 16px}
+  .titlerow{display:flex;align-items:center;gap:14px}.mascot{font-size:2.8rem}
+  h1{margin:0;font-size:1.45rem;text-shadow:0 2px 0 rgba(0,0,0,.18)}.sub{font-size:.92rem;opacity:.96}
+  .hud{display:flex;gap:10px;align-items:center;margin-top:14px;flex-wrap:wrap}
+  .bar{flex:1;min-width:140px;height:16px;background:#b2f2bb;border:3px solid #1e6b2e;border-radius:20px;overflow:hidden}
+  .bar>i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--yellow),var(--green2));transition:.4s}
+  .pill{background:#fff;border-radius:20px;padding:4px 12px;font-weight:800;border:3px solid var(--yellow);color:var(--green);white-space:nowrap}
+  .intro{background:#fff;border:3px dashed var(--green2);border-radius:18px;padding:14px 18px;margin:18px 0}
+  .card{background:#fff;border-radius:20px;border:4px solid #b2f2bb;box-shadow:0 6px 0 rgba(47,158,68,.12);padding:20px;margin:20px 0;display:none}
+  .card.active{display:block;animation:pop .3s}
+  @keyframes pop{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
+  .qnum{color:var(--pink);font-weight:800;font-family:'Baloo 2'}
+  .qt{font-size:1.18rem;font-weight:800;margin:6px 0 14px}
+  .opts button{display:block;width:100%;text-align:left;margin:8px 0;background:#fff;border:3px solid #e5dbff;border-radius:12px;padding:12px 14px;font-family:'Nunito';font-weight:700;font-size:1rem;cursor:pointer;transition:.1s}
+  .opts button:hover{border-color:var(--purple)}
+  .opts button.ok{background:#d3f9d8;border-color:var(--green)}
+  .opts button.no{background:#ffe3e3;border-color:var(--red)}
+  .opts .le{display:inline-block;font-family:'Baloo 2';color:var(--purple);width:22px}
+  .fb{margin-top:12px;font-weight:800;display:none;padding:10px 12px;border-radius:12px}
+  .fb.show{display:block;animation:pop .3s}.fb.good{background:#d3f9d8;color:#2b8a3e}.fb.bad{background:#ffe3e3;color:#c92a2a}
+  .spk{background:var(--yellow);border:2px solid var(--orange);border-radius:50%;width:34px;height:34px;font-size:1rem;cursor:pointer;box-shadow:0 2px 0 #b5651d;vertical-align:middle;margin-left:6px}
+  .spk:active{transform:translateY(2px);box-shadow:none}
+  .navb{display:flex;justify-content:space-between;margin-top:16px;gap:10px}
+  .btn{background:var(--pink);color:#fff;border:none;border-radius:12px;padding:11px 20px;font-family:'Baloo 2';box-shadow:0 3px 0 #b5197a;cursor:pointer;font-size:1rem}
+  .btn.grey{background:#adb5bd;box-shadow:0 3px 0 #868e96}
+  .btn:disabled{opacity:.5;cursor:default}
+  .result{display:none;text-align:center;background:linear-gradient(120deg,#fff3bf,#ffd020);border:4px solid var(--orange);border-radius:22px;padding:26px;margin:20px 0}
+  .result.show{display:block;animation:pop .4s}.result .big{font-size:3.6rem}
+  .result h2{color:var(--pink);margin:6px 0}.result .score{font-size:2.4rem;font-weight:800;color:var(--green)}
+  .stars{font-size:1.8rem;letter-spacing:3px}
+  .savebar{position:fixed;bottom:0;left:0;right:0;background:#fff0f6ee;border-top:3px solid var(--pink);padding:8px 14px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;backdrop-filter:blur(4px)}
+  a.nav,button.nav{background:var(--pink);color:#fff;border:none;border-radius:12px;padding:9px 16px;font-family:'Baloo 2';text-decoration:none;box-shadow:0 3px 0 #b5197a;cursor:pointer;font-size:1rem}
+  .modal{position:fixed;inset:0;background:rgba(42,26,58,.55);display:none;place-items:center;z-index:50;padding:16px}
+  .modal.show{display:grid}
+  .modal .box{background:#fff;border-radius:20px;border:4px solid var(--pink);padding:22px;max-width:340px;text-align:center}
+  .modal .box h3{color:var(--pink);margin:0 0 8px}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="titlerow"><div class="mascot">📝</div><div>
+    <h1>Simulado — Fun Park</h1>
+    <div class="sub">Inglês · 3º ano · Unit 6 · 25 questões · o 🔊 aparece ao responder</div>
+  </div></div>
+  <div class="hud">
+    <div class="bar"><i id="pbar"></i></div>
+    <div class="pill">✅ <span id="score">0</span>/25</div>
+  </div>
+</div></header>
+
+<div class="wrap">
+  <div class="intro">🎢 O <b>super desafio</b> do parque! São 25 perguntas. Responda com calma, você pode <b>voltar</b> e trocar. No fim, veja sua nota e ganhe seu troféu. Depois confira o <b>Gabarito</b> para entender cada uma. Good luck! 🍀</div>
+</div>
+
+<div class="wrap" id="quizbox"></div>
+
+<div class="wrap"><div class="result" id="result">
+  <div class="big">🏆🎡</div>
+  <h2 id="rtitle">Fim do Simulado!</h2>
+  <div class="score"><span id="rscore">0</span> / 25</div>
+  <div class="stars" id="rstars"></div>
+  <p id="rmsg"></p>
+  <button class="btn" onclick="restart()">🔁 Fazer de novo</button>
+  <a class="nav" href="gabarito.html" style="display:inline-block;margin-top:8px">✅ Ver o Gabarito comentado ▶</a>
+</div></div>
+
+<div class="savebar">
+  <a class="nav" href="index.html">⌂ Início</a>
+  <a class="nav" href="resumo.html">🗺️ Resumo</a>
+  <a class="nav" href="gabarito.html">✅ Gabarito</a>
+  <button class="nav" onclick="askReset()">🗑️ Zerar</button>
+</div>
+
+<div class="modal" id="modal"><div class="box">
+  <h3>Zerar tudo?</h3>
+  <p>Isso apaga suas respostas do simulado. Quer mesmo zerar?</p>
+  <button class="nav" style="background:var(--green)" onclick="doReset()">Sim, zerar</button>
+  <button class="nav" style="background:#adb5bd" onclick="closeModal()">Não</button>
+</div></div>
+
+<script>
+const KEY='funpark_simulado_3ano';
+function speak(t){try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='en-US';u.rate=1;speechSynthesis.speak(u);}catch(e){}}
+const Q=[
+ {q:'Como se diz "ouvir música" em inglês?',o:['listen to music','read books','play soccer','watch TV'],c:0,say:'listen to music'},
+ {q:'Como se diz "jogar futebol" em inglês?',o:['swim','play soccer','draw','dance'],c:1,say:'play soccer'},
+ {q:'Como se diz "desenhar" em inglês?',o:['draw','paint','sing','read'],c:0,say:'draw'},
+ {q:'Como se diz "assistir TV" em inglês?',o:['watch TV','make models','do puzzles','climb a tree'],c:0,say:'watch TV'},
+ {q:'Como se diz "nadar" em inglês?',o:['dance','swim','play','paint'],c:1,say:'swim'},
+ {q:'Como se diz "fazer quebra-cabeça" em inglês?',o:['do puzzles','board games','karaoke','make models'],c:0,say:'do puzzles'},
+ {q:'Como se diz "cantar karaokê" em inglês?',o:['sing karaoke','draw','swim','read books'],c:0,say:'sing karaoke'},
+ {q:'Como se diz "ler livros" em inglês?',o:['read books','watch TV','paint','dance'],c:0,say:'read books'},
+ {q:'"make models" quer dizer:',o:['pintar','montar maquetes','dançar','nadar'],c:1,say:'make models'},
+ {q:'"play board games" quer dizer:',o:['jogar videogame','jogar jogos de tabuleiro','jogar futebol','pular corda'],c:1,say:'play board games'},
+ {q:'Complete: "I ___ playing soccer." (Eu gosto de jogar futebol.)',o:['likes','like','liking','to like'],c:1,say:'I like playing soccer.'},
+ {q:'Complete: "She ___ dancing." (Ela gosta de dançar.)',o:['like','likes','don\'t','doesn\'t'],c:1,say:'She likes dancing.'},
+ {q:'"Ele não gosta de assistir TV." em inglês:',o:['He like watching TV.','He doesn\'t like watching TV.','He likes watching TV.','He don\'t likes TV.'],c:1,say:'He doesn\'t like watching TV.'},
+ {q:'Qual frase está CERTA?',o:['He like soccer.','He likes soccer.','He liking soccer.','He likes soccers.'],c:1,say:'He likes soccer.'},
+ {q:'"Eu não gosto de fazer quebra-cabeça." em inglês:',o:['I like doing puzzles.','I don\'t like doing puzzles.','She doesn\'t like puzzles.','I likes puzzles.'],c:1,say:'I don\'t like doing puzzles.'},
+ {q:'Complete a pergunta: "___ you like doing?"',o:['What do','What does','Who is','When do'],c:0,say:'What do you like doing?'},
+ {q:'Complete: "She ___ like climbing a tree." (Ela NÃO gosta.)',o:['likes','doesn\'t','don\'t','like'],c:1,say:'She doesn\'t like climbing a tree.'},
+ {q:'Qual palavra tem o som "êi" escrito com "ai"?',o:['play','train','today','day'],c:1,say:'train'},
+ {q:'Qual palavra tem o som "êi" escrito com "ay"?',o:['rain','play','train','rainy'],c:1,say:'play'},
+ {q:'Complete: "It\'s ___ today." (Está chuvoso hoje.)',o:['rainy','play','train','day'],c:0,say:'It\'s rainy today.'},
+ {q:'Complete: "They both ___ playing with friends."',o:['likes','like','doesn\'t','liking'],c:1,say:'They both like playing with friends.'},
+ {q:'Complete: "He likes ___ books." (Ele gosta de ler livros.)',o:['reading','read','reads','to reads'],c:0,say:'He likes reading books.'},
+ {q:'"Ela gosta de pintar." em inglês:',o:['She like painting.','She likes painting.','She likes paint.','He likes painting.'],c:1,say:'She likes painting.'},
+ {q:'Complete o chant: "Let\'s ___ a game!"',o:['play','plays','playing','train'],c:0,say:'Let\'s play a game!'},
+ {q:'Qual resposta combina com "What do you like doing?"',o:['Yes, please.','I like drawing.','He is tall.','She doesn\'t.'],c:1,say:'I like drawing.'}
+];
+let cur=0, answers={}, mem={};
+try{answers=JSON.parse(localStorage.getItem(KEY))||{};}catch(e){answers=mem;}
+const LET=['A','B','C','D'];
+const box=document.getElementById('quizbox');
+Q.forEach((item,i)=>{
+  const d=document.createElement('div');d.className='card';d.id='c'+i;
+  let opts=item.o.map((o,j)=>`<button onclick="answer(${i},${j})"><span class="le">${LET[j]}</span>${o}</button>`).join('');
+  d.innerHTML=`<div class="qnum">Questão ${i+1} de 25</div>
+    <div class="qt">${item.q}</div>
+    <div class="opts">${opts}</div>
+    <div class="fb" id="fb${i}"></div>
+    <div class="navb">
+      <button class="btn grey" onclick="go(${i-1})" ${i===0?'disabled':''}>◀ Voltar</button>
+      <button class="btn" onclick="go(${i+1})">${i===Q.length-1?'Ver resultado 🏁':'Próxima ▶'}</button>
+    </div>`;
+  box.appendChild(d);
+});
+function show(i){document.querySelectorAll('.card').forEach(c=>c.classList.remove('active'));
+  if(i>=Q.length){finish();return;}
+  document.getElementById('c'+i).classList.add('active');cur=i;
+  document.getElementById('result').classList.remove('show');}
+function go(i){if(i<0)return;show(i);window.scrollTo({top:0,behavior:'smooth'});}
+function answer(i,j){
+  const d=document.getElementById('c'+i);const btns=d.querySelectorAll('.opts button');const fb=document.getElementById('fb'+i);
+  btns.forEach(b=>b.disabled=true);
+  const c=Q[i].c;btns[c].classList.add('ok');if(j!==c)btns[j].classList.add('no');
+  fb.innerHTML=(j===c?'🎉 Certo! ':'🙂 Quase! A certa está em verde. ')
+    +`<button class="spk" onclick="speak('${Q[i].say.replace(/'/g,"\\'")}')">🔊</button> <span style="font-weight:700">ouça: "${Q[i].say}"</span>`;
+  fb.className='fb show '+(j===c?'good':'bad');
+  answers[i]=j;save();update();
+}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(answers));}catch(e){mem=answers;}}
+function update(){let sc=0,ans=0;Q.forEach((it,i)=>{if(i in answers){ans++;if(answers[i]===it.c)sc++;}});
+  document.getElementById('score').textContent=sc;document.getElementById('pbar').style.width=(ans/Q.length*100)+'%';return sc;}
+function finish(){
+  const sc=update();document.querySelectorAll('.card').forEach(c=>c.classList.remove('active'));
+  const r=document.getElementById('result');r.classList.add('show');
+  document.getElementById('rscore').textContent=sc;
+  let st=Math.max(1,Math.round(sc/5));document.getElementById('rstars').textContent='⭐'.repeat(st);
+  let msg,title;
+  if(sc>=22){title='Champion! 🏆';msg='Uau! Você mandou muito bem, está pronto para a prova!';}
+  else if(sc>=17){title='Very good! 🎉';msg='Muito bom! Confira o gabarito das que errou e você fica craque.';}
+  else if(sc>=11){title='Good! 🌈';msg='Bom trabalho! Revise o Resumo e faça de novo para subir a nota.';}
+  else{title='Keep going! 💪';msg='Não desanime! Volte à Leitura Guiada e ao Resumo e tente outra vez.';}
+  document.getElementById('rtitle').textContent=title;document.getElementById('rmsg').textContent=msg;
+  r.scrollIntoView({behavior:'smooth'});
+}
+function restart(){answers={};save();document.querySelectorAll('.opts button').forEach(b=>{b.disabled=false;b.classList.remove('ok','no');});document.querySelectorAll('.fb').forEach(f=>f.className='fb');update();show(0);window.scrollTo({top:0,behavior:'smooth'});}
+Q.forEach((it,i)=>{if(i in answers){const d=document.getElementById('c'+i);const btns=d.querySelectorAll('.opts button');btns.forEach(b=>b.disabled=true);btns[it.c].classList.add('ok');if(answers[i]!==it.c)btns[answers[i]].classList.add('no');const fb=document.getElementById('fb'+i);fb.innerHTML=(answers[i]===it.c?'🎉 Certo! ':'🙂 A certa está em verde. ')+`<button class="spk" onclick="speak('${it.say.replace(/'/g,"\\'")}')">🔊</button> <span style="font-weight:700">ouça: "${it.say}"</span>`;fb.className='fb show '+(answers[i]===it.c?'good':'bad');}});
+update();show(0);
+function askReset(){document.getElementById('modal').classList.add('show');}
+function closeModal(){document.getElementById('modal').classList.remove('show');}
+function doReset(){try{localStorage.removeItem(KEY);}catch(e){}mem={};location.reload();}
+</script>
+</body>
+</html>

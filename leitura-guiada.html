@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leitura Guiada · Fun Park · Inglês 3º ano · Unit 6</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--pink:#ff3d81;--pink2:#ff85b3;--yellow:#ffd020;--orange:#ff922b;--red:#f03e3e;--blue:#1c7ed6;--sky:#4dabf7;--purple:#9c36b5;--green:#2f9e44;--green2:#51cf66;--ink:#2a1a3a;--cream:#fff0f6}
+  *{box-sizing:border-box}
+  body{margin:0;background:linear-gradient(180deg,#ffe3ef,#fff0f6 40%,#e7f5ff);font-family:'Nunito',system-ui,sans-serif;color:var(--ink);line-height:1.6;padding-bottom:90px}
+  h1,h2,h3,.baloo{font-family:'Baloo 2','Nunito',sans-serif}
+  header{background:linear-gradient(120deg,#ff3d81,#9c36b5);color:#fff;padding:18px 16px;border-bottom:6px solid var(--yellow);box-shadow:0 6px 0 #7d1e6b}
+  .wrap{max-width:820px;margin:0 auto;padding:0 16px}
+  .titlerow{display:flex;align-items:center;gap:14px}.mascot{font-size:2.8rem}
+  h1{margin:0;font-size:1.45rem;text-shadow:0 2px 0 rgba(0,0,0,.18)}.sub{font-size:.92rem;opacity:.96}
+  .hud{display:flex;gap:10px;align-items:center;margin-top:14px;flex-wrap:wrap}
+  .bar{flex:1;min-width:140px;height:16px;background:#ffd6e7;border:3px solid #7d1e6b;border-radius:20px;overflow:hidden}
+  .bar>i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--yellow),var(--green2));transition:.4s}
+  .pill{background:#fff;border-radius:20px;padding:4px 12px;font-weight:800;border:3px solid var(--yellow);color:var(--pink);white-space:nowrap}
+  .intro{background:#fff;border:3px dashed var(--pink2);border-radius:18px;padding:14px 18px;margin:18px 0}
+  .block{background:#fff;border-radius:20px;border:4px solid #ffd6e7;box-shadow:0 6px 0 rgba(157,54,181,.12);padding:18px 20px;margin:20px 0}
+  .block h2{color:var(--purple);margin:0 0 8px;font-size:1.3rem;display:flex;align-items:center;gap:8px}
+  .block .num{background:var(--pink);color:#fff;border-radius:50%;width:34px;height:34px;display:grid;place-items:center;font-size:1rem;flex:0 0 auto}
+  .block p{margin:10px 0}
+  .en{color:var(--blue);font-weight:800}
+  .pt{color:var(--dim,#8a6d5a);font-style:italic}
+  .voc{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
+  .card{background:#fff8fb;border:3px solid var(--pink2);border-radius:14px;padding:10px 12px;min-width:150px;flex:1 1 150px;text-align:center}
+  .card .w{font-family:'Baloo 2';font-size:1.15rem;color:var(--blue)}
+  .card .t{font-size:.9rem;color:#7a5b8a}
+  .card .em{font-size:1.8rem;display:block;margin-bottom:2px}
+  .spk{background:var(--yellow);border:2px solid var(--orange);border-radius:50%;width:34px;height:34px;font-size:1rem;cursor:pointer;margin-top:6px;box-shadow:0 2px 0 #b5651d}
+  .spk:active{transform:translateY(2px);box-shadow:none}
+  .phrase{background:#e7f5ff;border-left:6px solid var(--sky);border-radius:8px;padding:10px 12px;margin:10px 0;font-weight:700;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .dado{background:#fff3bf;border-left:6px solid var(--yellow);border-radius:8px;padding:8px 12px;margin:10px 0;font-weight:700}
+  .q{background:#f3f0ff;border:2px dashed var(--purple);border-radius:14px;padding:12px 14px;margin-top:14px}
+  .q .qt{font-weight:800;color:var(--purple);margin-bottom:8px}
+  .q button{display:block;width:100%;text-align:left;margin:6px 0;background:#fff;border:2px solid #e5dbff;border-radius:10px;padding:9px 12px;font-family:'Nunito';font-weight:700;cursor:pointer;transition:.1s}
+  .q button:hover{border-color:var(--purple)}
+  .q button.ok{background:#d3f9d8;border-color:var(--green)}
+  .q button.no{background:#ffe3e3;border-color:var(--red)}
+  .q .fb{margin-top:8px;font-weight:800;display:none}
+  .q .fb.show{display:block;animation:pop .3s}
+  @keyframes pop{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
+  .done{display:none;text-align:center;background:linear-gradient(120deg,#fff3bf,#ffd020);border:4px solid var(--orange);border-radius:22px;padding:24px;margin:24px 0}
+  .done.show{display:block;animation:pop .4s}.done .big{font-size:3.4rem}.done h2{color:var(--pink);margin:6px 0}
+  .savebar{position:fixed;bottom:0;left:0;right:0;background:#fff0f6ee;border-top:3px solid var(--pink);padding:8px 14px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;backdrop-filter:blur(4px)}
+  a.nav,button.nav{background:var(--pink);color:#fff;border:none;border-radius:12px;padding:9px 16px;font-family:'Baloo 2';text-decoration:none;box-shadow:0 3px 0 #b5197a;cursor:pointer;font-size:1rem}
+  .modal{position:fixed;inset:0;background:rgba(42,26,58,.55);display:none;place-items:center;z-index:50;padding:16px}
+  .modal.show{display:grid}
+  .modal .box{background:#fff;border-radius:20px;border:4px solid var(--pink);padding:22px;max-width:340px;text-align:center}
+  .modal .box h3{color:var(--pink);margin:0 0 8px}
+  .modal .box button{margin:6px}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="titlerow"><div class="mascot">🎡</div><div>
+    <h1>Leitura Guiada — Fun Park</h1>
+    <div class="sub">Inglês · 3º ano · Unit 6 "What do you like doing?" · clique no 🔊 para ouvir</div>
+  </div></div>
+  <div class="hud">
+    <div class="bar"><i id="pbar"></i></div>
+    <div class="pill">⭐ <span id="stars">0</span>/8</div>
+  </div>
+</div></header>
+
+<div class="wrap">
+  <div class="intro">🎪 <b>Bem-vindo ao Parque de Diversões dos Hobbies!</b> Aqui a gente aprende a falar em inglês o que a gente <b>gosta</b> e <b>não gosta</b> de fazer. Passeie por cada área do parque, ouça as palavras no 🔊 e responda os desafios para ganhar estrelas. Let's go! 🎈</div>
+</div>
+
+<div class="wrap" id="blocks"></div>
+
+<div class="wrap"><div class="done" id="done">
+  <div class="big">🏆🎡</div>
+  <h2>You did it! (Você conseguiu!)</h2>
+  <p>Você terminou a Leitura Guiada e ganhou <b><span id="fstars">0</span> estrelas</b>! Agora vá para o <b>Quiz</b> para testar o que aprendeu. 🎈</p>
+  <a class="nav" href="quiz.html">🎯 Ir para o Quiz ▶</a>
+</div></div>
+
+<div class="savebar">
+  <a class="nav" href="index.html">⌂ Início</a>
+  <a class="nav" href="quiz.html">🎯 Quiz</a>
+  <a class="nav" href="resumo.html">🗺️ Resumo</a>
+  <a class="nav" href="simulado.html">📝 Simulado</a>
+  <button class="nav" onclick="askReset()">🗑️ Zerar</button>
+</div>
+
+<div class="modal" id="modal"><div class="box">
+  <h3>Zerar tudo?</h3>
+  <p>Isso apaga suas estrelas desta página. Quer mesmo zerar?</p>
+  <button class="nav" style="background:var(--green)" onclick="doReset()">Sim, zerar</button>
+  <button class="nav" style="background:#adb5bd" onclick="closeModal()">Não</button>
+</div></div>
+
+<script>
+const KEY='funpark_leitura_3ano';
+function speak(t){try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='en-US';u.rate=1;speechSynthesis.speak(u);}catch(e){}}
+function voc(list){return '<div class="voc">'+list.map(v=>`<div class="card"><span class="em">${v[2]}</span><div class="w">${v[0]}</div><div class="t">${v[1]}</div><button class="spk" onclick="speak('${v[0]}')">🔊</button></div>`).join('')+'</div>';}
+function ph(en,pt){return `<div class="phrase"><button class="spk" onclick="speak('${en.replace(/'/g,"\\'")}')">🔊</button><span><span class="en">${en}</span> <span class="pt">— ${pt}</span></span></div>`;}
+
+const B=[
+ {t:'A área dos Hobbies (o que dá pra fazer)',em:'🎠',
+  html:`<p>No nosso parque, cada brinquedo é uma <b>atividade</b> (um hobby). Ouça cada palavra em inglês no 🔊 e repita bem alto!</p>`
+   +voc([['listen to music','ouvir música','🎧'],['do puzzles','fazer quebra-cabeça','🧩'],['make models','montar maquetes','🏗️'],['dance','dançar','💃'],['draw','desenhar','✏️'],['paint','pintar','🎨']])
+   +voc([['read books','ler livros','📚'],['watch TV','assistir TV','📺'],['play video games','jogar videogame','🎮'],['play board games','jogar jogos de tabuleiro','♟️'],['play soccer','jogar futebol','⚽'],['sing karaoke','cantar karaokê','🎤']])
+   +voc([['swim','nadar','🏊'],['climb a tree','subir na árvore','🌳']])
+   +`<div class="dado">💡 Dica: quase todas viram "-ing" quando a gente fala do que gosta: <span class="en">dance → dancing</span>, <span class="en">swim → swimming</span>, <span class="en">read → reading</span>.</div>`,
+  q:'Como se diz "jogar futebol" em inglês?',
+  o:['read books','play soccer','watch TV'],c:1},
+
+ {t:'Falando de MIM: I like / I don\'t like',em:'🎢',
+  html:`<p>Para dizer o que <b>EU gosto</b>, use <span class="en">I like...</span> Para o que <b>EU NÃO gosto</b>, use <span class="en">I don't like...</span></p>`
+   +ph("I like playing soccer.","Eu gosto de jogar futebol.")
+   +ph("I don't like doing puzzles.","Eu não gosto de fazer quebra-cabeça.")
+   +ph("What do you like doing?","O que você gosta de fazer?")
+   +`<div class="dado">🎪 A pergunta do parque é: <span class="en">What do you like doing?</span> Responda: <span class="en">I like...</span> (+ atividade com -ing).</div>`,
+  q:'Você quer dizer que NÃO gosta de dançar. Qual frase é certa?',
+  o:["I like dancing.","I don't like dancing.","She likes dancing."],c:1},
+
+ {t:'Falando de OUTRA pessoa: o "s" mágico',em:'🎡',
+  html:`<p>Quando falamos de <b>He</b> (ele) ou <b>She</b> (ela), o verbo <b>like</b> ganha um <b>"s"</b> no fim: vira <span class="en">likes</span>. É o "s" mágico do parque! 🎩✨</p>`
+   +ph("He likes reading books.","Ele gosta de ler livros.")
+   +ph("She likes swimming.","Ela gosta de nadar.")
+   +`<p>E para dizer que ele/ela <b>NÃO</b> gosta, usamos <span class="en">doesn't like</span> (aqui o like <b>não</b> leva "s"):</p>`
+   +ph("He doesn't like watching TV.","Ele não gosta de assistir TV.")
+   +ph("She doesn't like climbing a tree.","Ela não gosta de subir na árvore.")
+   +`<div class="dado">⚠️ Pegadinha da prova: com <b>He/She</b> é <span class="en">like<b>s</b></span> (gosta). Mas depois de <span class="en">doesn't</span> volta a ser <span class="en">like</span> sem "s".</div>`,
+  q:'Complete: "She ___ painting." (Ela gosta de pintar.)',
+  o:['like','likes','liking'],c:1},
+
+ {t:'Mais treino do "s" mágico',em:'🎪',
+  html:`<p>Olha só a diferença. Com <b>I / you</b> é <span class="en">like</span>. Com <b>he / she</b> é <span class="en">likes</span>.</p>`
+   +ph("I like drawing.","Eu gosto de desenhar.")
+   +ph("He likes drawing.","Ele gosta de desenhar.")
+   +ph("They both like playing with friends.","Os dois gostam de brincar com amigos.")
+   +`<div class="dado">🎯 Truque: pense "ele gosta<b>s</b>" — o "s" de he/she é igual ao "s" de likes!</div>`,
+  q:'Qual frase está CERTA?',
+  o:['He like soccer.','He likes soccer.','He likes soccers.'],c:1},
+
+ {t:'Phonics: os sons "ai" e "ay"',em:'🎫',
+  html:`<p>As letrinhas <b>ai</b> e <b>ay</b> fazem o mesmo som: <b>"êi"</b> (como em "lei"). Ouça no 🔊!</p>`
+   +`<p><b>Com "ai":</b></p>`
+   +voc([['train','trem','🚂'],['rain','chuva','🌧️'],['rainy','chuvoso','☔']])
+   +`<p><b>Com "ay":</b></p>`
+   +voc([['play','brincar/jogar','🎉'],['today','hoje','📅'],['day','dia','🌞']])
+   +ph("It's rainy today. Let's play a game!","Está chuvoso hoje. Vamos jogar um jogo!")
+   +`<div class="dado">🔤 Regra fácil: o som "êi" costuma ser <b>ai</b> no <b>meio</b> da palavra (tr<b>ai</b>n) e <b>ay</b> no <b>fim</b> (pl<b>ay</b>, d<b>ay</b>).</div>`,
+  q:'Qual palavra tem o som escrito com "ay"?',
+  o:['train','play','rain'],c:1},
+
+ {t:'Revisão do parque (juntando tudo)',em:'🎉',
+  html:`<p>Vamos misturar tudo! Leia as frases, ouça no 🔊 e responda os últimos desafios.</p>`
+   +ph("I like singing karaoke, but I don't like doing puzzles.","Eu gosto de cantar karaokê, mas não gosto de fazer quebra-cabeça.")
+   +ph("She likes reading books at school.","Ela gosta de ler livros na escola.")
+   +ph("He doesn't like dancing.","Ele não gosta de dançar.")
+   +`<div class="dado">🌟 Você já sabe: dizer o que gosta (I like), o que não gosta (I don't like), falar do outro com o "s" mágico (He/She likes) e os sons ai/ay. Boa prova!</div>`,
+  q:'"He ___ like watching TV." (Ele NÃO gosta de assistir TV.) Complete:',
+  o:['doesn\'t','likes','don\'t'],c:0},
+
+ {t:'Desafio final 1',em:'⭐',
+  html:`<p>Última roda-gigante de perguntas! 🎡</p>`
+   +ph("What do you like doing?","O que você gosta de fazer?"),
+  q:'Alguém te pergunta "What do you like doing?". Qual resposta faz sentido?',
+  o:['Yes, please.','I like painting.','He is happy.'],c:1},
+
+ {t:'Desafio final 2',em:'⭐',
+  html:`<p>A última estrela do parque é sua! 🌟</p>`
+   +ph("She doesn't like climbing a tree.","Ela não gosta de subir na árvore."),
+  q:'Traduza para o inglês: "Ela gosta de nadar."',
+  o:['She like swim.','She likes swimming.','I like swimming.'],c:1}
+];
+
+let state={};let mem={};
+try{state=JSON.parse(localStorage.getItem(KEY))||{};}catch(e){state=mem;}
+const box=document.getElementById('blocks');
+B.forEach((b,i)=>{
+  const d=document.createElement('div');d.className='block';d.id='b'+i;
+  let opts=b.o.map((o,j)=>`<button onclick="answer(${i},${j})">${o}</button>`).join('');
+  d.innerHTML=`<h2><span class="num">${i+1}</span> ${b.em} ${b.t}</h2>${b.html}
+    <div class="q"><div class="qt">❓ Desafio: ${b.q}</div>${opts}<div class="fb"></div></div>`;
+  box.appendChild(d);
+});
+function answer(i,j){
+  const d=document.getElementById('b'+i);const fb=d.querySelector('.fb');const btns=d.querySelectorAll('.q button');
+  btns.forEach(b=>b.disabled=true);
+  const c=B[i].c;
+  if(j===c){btns[j].classList.add('ok');fb.textContent='🎉 Certíssimo! Ganhou uma estrela!';fb.style.color='#2b8a3e';}
+  else{btns[j].classList.add('no');btns[c].classList.add('ok');fb.textContent='🙂 Quase! A resposta certa está em verde.';fb.style.color='#c92a2a';}
+  fb.classList.add('show');
+  state['b'+i]=(j===c)?1:0;save();update();
+}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){mem=state;}}
+function update(){
+  let stars=0,answered=0;
+  B.forEach((b,i)=>{if('b'+i in state){answered++;if(state['b'+i]===1)stars++;
+    const d=document.getElementById('b'+i);d.querySelectorAll('.q button').forEach(bt=>bt.disabled=true);}});
+  document.getElementById('stars').textContent=stars;
+  document.getElementById('fstars').textContent=stars;
+  document.getElementById('pbar').style.width=(answered/B.length*100)+'%';
+  if(answered>=B.length){document.getElementById('done').classList.add('show');}
+}
+B.forEach((b,i)=>{if('b'+i in state){const d=document.getElementById('b'+i);const btns=d.querySelectorAll('.q button');const c=b.c;btns[c].classList.add('ok');const fb=d.querySelector('.fb');if(state['b'+i]===1){fb.textContent='🎉 Certíssimo! Ganhou uma estrela!';fb.style.color='#2b8a3e';}else{fb.textContent='🙂 A resposta certa está em verde.';fb.style.color='#c92a2a';}fb.classList.add('show');}});
+function askReset(){document.getElementById('modal').classList.add('show');}
+function closeModal(){document.getElementById('modal').classList.remove('show');}
+function doReset(){try{localStorage.removeItem(KEY);}catch(e){}mem={};location.reload();}
+update();
+</script>
+</body>
+</html>

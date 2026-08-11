@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verdadeiro ou Falso · Fun Park · Inglês 3º ano</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--pink:#ff3d81;--yellow:#ffd020;--orange:#ff922b;--red:#f03e3e;--blue:#1c7ed6;--purple:#9c36b5;--green:#2f9e44;--green2:#51cf66;--ink:#2a1a3a}
+  *{box-sizing:border-box}
+  body{margin:0;background:linear-gradient(180deg,#f3d9ff,#fff0f6 55%,#e7f5ff);font-family:'Nunito',system-ui,sans-serif;color:var(--ink);line-height:1.6;padding-bottom:90px}
+  h1,h2,h3,.baloo{font-family:'Baloo 2','Nunito',sans-serif}
+  header{background:linear-gradient(120deg,#9c36b5,#ff3d81);color:#fff;padding:18px 16px;border-bottom:6px solid var(--yellow);box-shadow:0 6px 0 #7d1e6b}
+  .wrap{max-width:720px;margin:0 auto;padding:0 16px}
+  .titlerow{display:flex;align-items:center;gap:14px}.mascot{font-size:2.8rem}
+  h1{margin:0;font-size:1.45rem;text-shadow:0 2px 0 rgba(0,0,0,.18)}.sub{font-size:.92rem;opacity:.96}
+  .hud{display:flex;gap:10px;align-items:center;margin-top:14px;flex-wrap:wrap}
+  .bar{flex:1;min-width:140px;height:16px;background:#eebefa;border:3px solid #7d1e6b;border-radius:20px;overflow:hidden}
+  .bar>i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--yellow),var(--green2));transition:.4s}
+  .pill{background:#fff;border-radius:20px;padding:4px 12px;font-weight:800;border:3px solid var(--yellow);color:var(--purple);white-space:nowrap}
+  .stage{background:#fff;border-radius:22px;border:4px solid #eebefa;box-shadow:0 6px 0 rgba(157,54,181,.15);padding:24px 20px;margin:22px 0;text-align:center}
+  .qcount{color:var(--pink);font-weight:800;font-family:'Baloo 2'}
+  .sentence{font-size:1.5rem;font-weight:800;color:var(--blue);margin:16px 0;font-family:'Baloo 2'}
+  .spk{background:var(--yellow);border:2px solid var(--orange);border-radius:50%;width:40px;height:40px;font-size:1.1rem;cursor:pointer;box-shadow:0 2px 0 #b5651d}
+  .spk:active{transform:translateY(2px);box-shadow:none}
+  .tf{display:flex;gap:14px;justify-content:center;margin-top:18px}
+  .tf button{font-family:'Baloo 2';font-size:1.3rem;border:none;border-radius:16px;padding:16px 30px;cursor:pointer;color:#fff}
+  .tf .t{background:var(--green);box-shadow:0 4px 0 #1e6b2e}
+  .tf .f{background:var(--red);box-shadow:0 4px 0 #a52222}
+  .tf button:active{transform:translateY(3px);box-shadow:none}
+  .fb{display:none;margin-top:16px;padding:12px 14px;border-radius:14px;font-weight:800}
+  .fb.show{display:block;animation:pop .3s}
+  @keyframes pop{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}
+  .fb.good{background:#d3f9d8;color:#2b8a3e}.fb.bad{background:#ffe3e3;color:#c92a2a}
+  .btn{background:var(--pink);color:#fff;border:none;border-radius:14px;padding:12px 22px;font-family:'Baloo 2';box-shadow:0 4px 0 #b5197a;cursor:pointer;font-size:1.05rem;margin-top:14px}
+  .result{display:none}.result.show{display:block;animation:pop .4s}
+  .result .big{font-size:3.6rem}.result .score{font-size:2rem;font-weight:800;color:var(--blue)}
+  .stars{font-size:1.8rem;letter-spacing:3px}
+  .savebar{position:fixed;bottom:0;left:0;right:0;background:#fff0f6ee;border-top:3px solid var(--pink);padding:8px 14px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;backdrop-filter:blur(4px)}
+  a.nav,button.nav{background:var(--pink);color:#fff;border:none;border-radius:12px;padding:9px 16px;font-family:'Baloo 2';text-decoration:none;box-shadow:0 3px 0 #b5197a;cursor:pointer;font-size:1rem}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="titlerow"><div class="mascot">🎪</div><div>
+    <h1>Verdadeiro ou Falso — Fun Park</h1>
+    <div class="sub">Inglês · 3º ano · Unit 6 · a frase está certa? clique 🔊 para ouvir</div>
+  </div></div>
+  <div class="hud">
+    <div class="bar"><i id="pbar"></i></div>
+    <div class="pill">⭐ <span id="score">0</span>/12</div>
+  </div>
+</div></header>
+
+<div class="wrap">
+  <div class="stage" id="stage">
+    <div class="qcount" id="qcount">Frase 1 de 12</div>
+    <div class="sentence" id="sentence"></div>
+    <button class="spk" id="spk">🔊 ouvir</button>
+    <div class="tf" id="tf">
+      <button class="t" onclick="answer(true)">✅ True<br><span style="font-size:.8rem">(certo)</span></button>
+      <button class="f" onclick="answer(false)">❌ False<br><span style="font-size:.8rem">(errado)</span></button>
+    </div>
+    <div class="fb" id="fb"></div>
+    <button class="btn" id="nextbtn" style="display:none" onclick="next()">Próxima ▶</button>
+  </div>
+
+  <div class="stage result" id="result">
+    <div class="big">🏆🎪</div>
+    <h2 style="color:var(--pink)">Fim do jogo!</h2>
+    <div class="score"><span id="rscore">0</span> / 12</div>
+    <div class="stars" id="rstars"></div>
+    <p id="rmsg"></p>
+    <button class="btn" onclick="startGame()">🔁 Jogar de novo</button>
+    <a class="nav" href="simulado.html" style="display:inline-block;margin-top:6px">📝 Ir para o Simulado ▶</a>
+  </div>
+</div>
+
+<div class="savebar">
+  <a class="nav" href="index.html">⌂ Início</a>
+  <a class="nav" href="resumo.html">🗺️ Resumo</a>
+  <a class="nav" href="quiz.html">🎯 Quiz</a>
+  <a class="nav" href="simulado.html">📝 Simulado</a>
+</div>
+
+<script>
+function speak(t){try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='en-US';u.rate=1;speechSynthesis.speak(u);}catch(e){}}
+// banco de 22 frases. true = a frase (inglês + tradução) está CORRETA.
+const BANK=[
+ {s:"She likes swimming.",say:"She likes swimming.",tf:true,why:'Certo! Com "She" usamos "likes" (com s).'},
+ {s:"He like reading books.",say:"He likes reading books.",tf:false,why:'Errado! Com "He" é "likes" (com s): He likes reading books.'},
+ {s:'I don\'t like dancing.',say:"I do not like dancing.",tf:true,why:'Certo! "I don\'t like" = eu não gosto.'},
+ {s:"He doesn't likes TV.",say:"He doesn't like TV.",tf:false,why:'Errado! Depois de "doesn\'t" o like não leva s: He doesn\'t like TV.'},
+ {s:'"play" tem o som "ay".',say:"play",tf:true,why:'Certo! play termina em "ay".'},
+ {s:'"train" tem o som "ay".',say:"train",tf:false,why:'Errado! "train" tem "ai" no meio.'},
+ {s:"I like playing soccer.",say:"I like playing soccer.",tf:true,why:'Certo! "I like" + atividade.'},
+ {s:"She like painting.",say:"She likes painting.",tf:false,why:'Errado! É "She likes painting" (com s).'},
+ {s:'"listen to music" = ouvir música.',say:"listen to music",tf:true,why:'Certo! É ouvir música.'},
+ {s:'"read books" = assistir TV.',say:"read books",tf:false,why:'Errado! "read books" = ler livros. Assistir TV é "watch TV".'},
+ {s:"He likes making models.",say:"He likes making models.",tf:true,why:'Certo! He likes... (com s).'},
+ {s:"I likes drawing.",say:"I like drawing.",tf:false,why:'Errado! Com "I" é "like" (sem s): I like drawing.'},
+ {s:'"rainy" tem o som "ai".',say:"rainy",tf:true,why:'Certo! r-ai-ny tem "ai".'},
+ {s:"She doesn't like climbing a tree.",say:"She doesn't like climbing a tree.",tf:true,why:'Certo! doesn\'t like = não gosta.'},
+ {s:'"sing karaoke" = cantar karaokê.',say:"sing karaoke",tf:true,why:'Certo!'},
+ {s:"He likes soccers.",say:"He likes soccer.",tf:false,why:'Errado! É "He likes soccer" (sem s em soccer).'},
+ {s:"What do you like doing?",say:"What do you like doing?",tf:true,why:'Certo! É a pergunta "o que você gosta de fazer?".'},
+ {s:'"do puzzles" = fazer quebra-cabeça.',say:"do puzzles",tf:true,why:'Certo!'},
+ {s:"They both like playing with friends.",say:"They both like playing with friends.",tf:true,why:'Certo! Com "they" é "like" (sem s).'},
+ {s:'"today" tem o som "ay".',say:"today",tf:true,why:'Certo! to-d-ay termina em "ay".'},
+ {s:"She doesn't likes music.",say:"She doesn't like music.",tf:false,why:'Errado! Depois de doesn\'t: like sem s → She doesn\'t like music.'},
+ {s:'"watch TV" = assistir TV.',say:"watch TV",tf:true,why:'Certo!'}
+];
+let pool=[], idx=0, score=0, answered=false, mem={};
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function startGame(){
+  pool=shuffle([...BANK]).slice(0,12);idx=0;score=0;answered=false;
+  document.getElementById('result').classList.remove('show');
+  document.getElementById('stage').style.display='block';
+  render();update();window.scrollTo({top:0,behavior:'smooth'});
+}
+function render(){
+  const q=pool[idx];answered=false;
+  document.getElementById('qcount').textContent='Frase '+(idx+1)+' de 12';
+  document.getElementById('sentence').textContent=q.s;
+  document.getElementById('spk').onclick=()=>speak(q.say);
+  document.getElementById('tf').style.display='flex';
+  document.querySelectorAll('#tf button').forEach(b=>b.disabled=false);
+  const fb=document.getElementById('fb');fb.className='fb';
+  document.getElementById('nextbtn').style.display='none';
+}
+function answer(val){
+  if(answered)return;answered=true;
+  const q=pool[idx];const ok=(val===q.tf);
+  if(ok)score++;
+  document.querySelectorAll('#tf button').forEach(b=>b.disabled=true);
+  const fb=document.getElementById('fb');
+  fb.textContent=(ok?'🎉 ':'🙂 ')+q.why;
+  fb.className='fb show '+(ok?'good':'bad');
+  document.getElementById('nextbtn').style.display='inline-block';
+  update();
+}
+function next(){idx++;if(idx>=pool.length){finish();}else{render();}}
+function update(){document.getElementById('score').textContent=score;document.getElementById('pbar').style.width=((idx+(answered?1:0))/12*100)+'%';}
+function finish(){
+  document.getElementById('stage').style.display='none';
+  const r=document.getElementById('result');r.classList.add('show');
+  document.getElementById('rscore').textContent=score;
+  let st=Math.max(1,Math.round(score/2.4));document.getElementById('rstars').textContent='⭐'.repeat(st);
+  let msg;
+  if(score>=11)msg='Perfeito! Você é o campeão do parque! 🏆';
+  else if(score>=8)msg='Muito bom! Já sabe quase tudo. 🎉';
+  else if(score>=5)msg='Bom começo! Joga de novo para melhorar. 🌈';
+  else msg='Vamos treinar mais no Resumo e voltar aqui. Você consegue! 💪';
+  document.getElementById('rmsg').textContent=msg;
+  r.scrollIntoView({behavior:'smooth'});
+}
+startGame();
+</script>
+</body>
+</html>
